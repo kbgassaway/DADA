@@ -1,6 +1,6 @@
 ## Weekly Summaries and Assignments
 ## OSU CS-373 Defense Against the Dark Arts
-
+<br><br>
 
 ## Welcome to GitHub Pages
 
