@@ -1,3 +1,7 @@
+## Weekly Summaries and Assignments
+## OSU CS-373 Defense Against the Dark Arts
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/kbgassaway/DADA/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
