@@ -1,11 +1,13 @@
 ## DEFENSE AGAINST THE DARK ARTS
 ### CS373 - SUMMER 2019
 <br>
-<details><summary>Week Numbers<summary>
-<p>
+<details><summary>Week Numbers</summary>
+```markdown
    [Week 3](week3.md)
-</p>
+```
 </details>
+
+[Week 3](week3.md)
 
 ## Week 2 Write-Up:  Advanced Forensics
 
