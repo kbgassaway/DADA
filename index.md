@@ -2,8 +2,8 @@
 ### CS373 - SUMMER 2019
 <br>
 [Week 3](week3.md)
-<br>
 
+<br><br>
 ## Week 2 Write-Up:  Advanced Forensics
 
 Week 2 introduced the topic of advanced forensics including incident response and forensic methods, use of tools, handling and capture of evidence, volatility, performing a timeline analysis, and data recovery. 
