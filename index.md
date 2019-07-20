@@ -2,10 +2,10 @@
 ### CS373 - SUMMER 2019
 <br>
 <details><summary>Week Numbers</summary>
-   <a href="week3.html">Week 3</a>
+   <a href="week3.md">Week 3</a>
 </details>
 
-[Week 3](week3.html)
+[Week 3](week3.md)
 
 ## Week 2 Write-Up:  Advanced Forensics
 
