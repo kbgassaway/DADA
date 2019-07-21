@@ -29,7 +29,23 @@ Go [here](http://windbg.info/doc/1-common-cmds.html) to see a list of common Win
 Go [here](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/x86-architecture) to learn about x86 architecture, including how the internal registers are used.
 <br>
 
+### Memory Corruption
 
+A popular vulnerability to exploit is memory corruption. There are a few different categories of memory corruption which can result in undefined behavior. Buffer overflows can be used to determine internal registry offsets and give hackers control flow of program. Simply put, not checking lenghts of inputs can lead to hacks. The buffer overflow is the vulnerability trigger, and then the payload, or shell code, with the malicious code can be executed.
+
+![Lab Exploit1](L2_Exploit_1step.JPG)
+
+![Lab Exploit1a](L2_Exploit_1a.JPG)
+
+![Lab Exploit2](L2_Exploit_2step.JPG)
+
+![Lab Exploit2a](L2_Exploit_2result.JPG)
+
+![Lab Exploit3](L2_Exploit_3a.JPG)
+
+![Lab Exploit45](L2_Exploit_45code.JPG)
+
+![Lab Exploit6](L2_Exploit_6.JPG)
 
 ### References
 Antoniewicz, Brad, Foundstone, *Vulnerabilities and Expoits*, OSU CS-373 DEFENSE AGAINST THE DARK ARTS
