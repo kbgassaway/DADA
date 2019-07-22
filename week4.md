@@ -73,6 +73,23 @@ Calc.exe!
 
 There is a vulnerability located on the heap called use-after-free that has increased in popularity to hack into end-users browsers. We want to enable what's called low fragmentation heap, which creates buckets for a specific size after the 18th allocation of that size. Size allocations must be <= 16KB to invoke low fragmentation heap. Low fragmentation heaps don't use coalescing, meaning the memory between the buckets doesn't get combined when one bucket is freed.
 
+We use the following command to enable the page heap and user mode stack trace. Here were are modifying the image iexplorer.exe. We use flags "+hpa" to enable the page heap and "+ust" to enable user mode stack tracing.
+
+![Lesson3 1](L3_1.JPG)
+<br>
+
+We need to find out the size of the memory that was allocated that we will eventually write to. To do that we use "!heap -p -a <register>" at some break point prior to the memory being freed. Here 8 bytes of memory have been allocated.
+  
+![Lesson3 1a](L3_1a.JPG)
+<br>
+
+The memory gets freed. We make an allocation of the same size and replace the freed object with our block. We need to disable the page heap first. We pass the address of the 
+
+We then spray the heap with our address and shellcode. We see that about 98% of the heap data is size of 1 MB. So the addresses of these memory blocks are at very repeatable patterns. 
+
+![Lesson3 heapspray](L3_heapspray.JPG)
+<br>
+
 
 
 ### References
