@@ -83,13 +83,23 @@ We need to find out the size of the memory that was allocated that we will event
 ![Lesson3 1a](L3_1a.JPG)
 <br>
 
-The memory gets freed. We make an allocation of the same size and replace the freed object with our block. We need to disable the page heap first. We pass the address of the 
+We create a low fragmentation heap, then free one of the objects on the LFH. We make an allocation of the same size and replace the freed object with our block. We need to disable the page heap first. 
 
-We then spray the heap with our address and shellcode. We see that about 98% of the heap data is size of 1 MB. So the addresses of these memory blocks are at very repeatable patterns. 
+We then spray the heap with the image address and shellcode. We see that about 98% of the heap data is size of 1 MB. So the addresses of these memory blocks are at very repeatable patterns. 
 
 ![Lesson3 heapspray](L3_heapspray.JPG)
 <br>
 
+Lastly, we call the freed object which executes our shellcode.
+
+![Lesson3 calc](L3_calc.JPG)
+<br>
+
+A look at the code.
+
+![Lesson3 code1](L3code1.JPG)
+![Lesson3 code2](L3code2.JPG)
+<br><br>
 
 
 ### References
