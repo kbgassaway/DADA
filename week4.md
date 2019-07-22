@@ -27,7 +27,7 @@ Once FSExplorer.html is open and we allow scripts to be run, we attach the tab p
 Go [here](http://windbg.info/doc/1-common-cmds.html) to see a list of common WinDBG commands.
 
 Go [here](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/x86-architecture) to learn about x86 architecture, including how the internal registers are used.
-<br>
+<br><br>
 
 ### Memory Corruption
 
@@ -67,7 +67,13 @@ At the offset of the eip, we write the memory location that contains "ff e4", re
 Calc.exe! 
 
 ![Lab Exploit6](L2_Exploit_6.JPG)
-<br>
+<br><br>
+
+### Use-After-Free
+
+There is a vulnerability located on the heap called use-after-free that has increased in popularity to hack into end-users browsers. We want to enable what's called low fragmentation heap, which creates buckets for a specific size after the 18th allocation of that size. Size allocations must be <= 16KB to invoke low fragmentation heap. Low fragmentation heaps don't use coalescing, meaning the memory between the buckets doesn't get combined when one bucket is freed.
+
+
 
 ### References
 Antoniewicz, Brad, Foundstone, *Vulnerabilities and Expoits*, OSU CS-373 DEFENSE AGAINST THE DARK ARTS
