@@ -10,14 +10,14 @@
 
 Rootkits are used to hide and protect malware on a computer, and themselves are not typically harmful - it's the malware they hide that is (https://www.vipre.com/resource/what-are-rootkits/). If a user or AV can't see/read the malware, it makes detecting and removal much more difficult. To provide stealth, the rootkit infiltrates the operating system kernel and performs memory manipulation.
 
-Let's examine the rootkit Agony. Using the tool Cuckoo, learned in Week 3, the rootkit appears to have created 4 files: bad.bin, tzres.dll.bin, sortdefault.nls.bin, tzres.dll.
+Let's examine the rootkit Agony. Using the tool Cuckoo, the rootkit appears to have created 4 files: bad.bin, tzres.dll.bin, sortdefault.nls.bin, tzres.dll.
 
 ![lab1 1](lab1_4files.JPG)
 <br>
 
 However, a popup "bad has stopped working" appears the same time as a file, e2r355.ren, on the desktop.
 
-![lab1 2](lab1_e2r355.ren.JPG)
+![lab1 2](lab1_e2r355ren.JPG)
 <br>
 
 Also, if we examine the Cuckloo log, we see files r-k.exe and sparams.txt are created in the Windows directory.
