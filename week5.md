@@ -35,16 +35,22 @@ Most of the above files are hidden from the user. The rootkit has kept the files
 ![lab1 5](lab1_tuluka.JPG)
 <br>
 
-If we right-click on these kernel processes and hit enable, the hook should be removed at least temporarily. 
+Using LiveKD, a debugger that reads Windows kernal memory, we can examine the instructions at the memory locations for the above kernel processes and see that there is a pointer referencing the wininit.sys file discovered previously. If we list all system APIs, we see wininit listed again and the memory address it is located, which is outside of the kernel processes memory location.
 
-![lab1 6](lab1_hiddenwininit.JPG)
+![lab1 6](lab1_livekd.JPG)
 <br>
 
+![lab1 7](lab1_livekd_ssdt.JPG)
+<br>
 
+If we right-click on these kernel processes in Tuluka and hit enable, the hook should be removed at least temporarily. 
+
+![lab1 8](lab1_hiddenwininit.JPG)
+<br>
 
 FakeNet did capture network traffic attempts: a POST to /RPC2, a GET request to /gmail-helper/GmailInstaller.exe, and a GET request for a microsoft .dat.
 
-![lab1 8](lab1_fakenet.JPG)
+![lab1 9](lab1_fakenet.JPG)
 <br>
 
 
