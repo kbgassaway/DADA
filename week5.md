@@ -17,7 +17,7 @@ Let's examine the rootkit Agony. Using the tool Cuckoo, the rootkit appears to h
 
 However, a popup "bad has stopped working" appears the same time as a file, e2r355.ren, on the desktop.
 
-![lab1 2](lab1_e2r355ren.JPG)
+![lab1_2](lab1_e2r355ren.jpg)
 <br>
 
 Also, if we examine the Cuckloo log, we see files r-k.exe and sparams.txt are created in the Windows directory.
