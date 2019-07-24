@@ -55,6 +55,5 @@ FakeNet did capture network traffic attempts: a POST to /RPC2, a GET request to 
 
 
 
-
 ### References
 Kapoor , Aditya, Intel Security, *Windows Memory Manipulation*, OSU CS-373 DEFENSE AGAINST THE DARK ARTS
