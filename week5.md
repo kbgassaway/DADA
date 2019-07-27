@@ -43,6 +43,8 @@ Using LiveKD, a debugger that reads Windows kernal memory, we can examine the in
 ![lab1 7](lab1_livekd_ssdt.JPG)
 <br>
 
+The offset of the instruction from the beginning of the function boundary wininit+0x1480. This instruction has replaced the original instruction of NTEnumerateValueKey. The offset wininit+0x1050 is the beginning of the instructions that have replaced NTQueryDirectoryFile. And the offset wininit+0xf00 is the beginning of the instructions that have replaced NTQuerySystemInformation.
+
 If we right-click on these kernel processes in Tuluka and hit enable, the hook should be removed at least temporarily. 
 
 ![lab1 8](lab1_hiddenwininit.JPG)
