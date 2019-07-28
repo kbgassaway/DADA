@@ -77,8 +77,12 @@ But at some point the malicious instructions have to make a call back to the api
 To set the pointer back to the original api location, instead of the malicious location so that the malicious instructions are not called, we can write in the memory the original memory location of the api. If we do this for all the hooked apis then the malicious instructions are never referenced or called.
 
 ![lab3 dps](lab3_dps.JPG)
-<br><br>
+<br>
 
+We can further investigate the wininit.sys module that is loaded when the malware executes by dumping the module memory. He we can find byte sequences that could be used to created Yara rules for av. Ideally, we would want to find these byte sequences along with finding where the rootkit is hooking to verify this malware and avoid false positives.
+
+![lab5 bytes](lab5_bytes.JPG)
+<br><br>
 
 ### References
 Kapoor , Aditya, Intel Security, *Windows Memory Manipulation*, OSU CS-373 DEFENSE AGAINST THE DARK ARTS
