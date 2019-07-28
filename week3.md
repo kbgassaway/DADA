@@ -1,7 +1,7 @@
 ## DEFENSE AGAINST THE DARK ARTS
 ### CS373 - SUMMER 2019
 <br>
-[Week 2](index.md)  [Week4](week4.md)
+[Week 2](index.md)  [Week4](week4.md) [Week5](week5.md)
 
 <br><br>
 ## Week 3 Write-Up:  Malware Defenses
