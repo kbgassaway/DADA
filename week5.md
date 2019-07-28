@@ -53,14 +53,31 @@ If we right-click on these kernel processes in Tuluka and hit enable, the hook s
 FakeNet did capture network traffic attempts: a POST to /RPC2, a GET request to /gmail-helper/GmailInstaller.exe, and a GET request for a microsoft .dat.
 
 ![lab1 9](lab1_fakenet.JPG)
-<br>
+<br><br>
 
-### Process Injection
+### Process Injection and More Hooking
 
 Process injection is often used in malware. Using the tool Process Hacker, we can look for suspecious files that are executable and have no name ("Private"). We can also use this tool to review the memory in strings of the files.
 
 ![lab2](lab2_processInjection.JPG)
 <br>
+
+Going back to the malware Agony, if we examine the hooked apis we can set breakpoints at the hooked locations using the WinDBG kernel debugger. Here we set a breakpoint at the memory location 9bd0c480 and once it's hit examine the call stack, which contains the call to wininit+0x1480 (the offset of the instructions observed previously). 
+
+![lab3_apis](lab3_apis.JPG)
+<br>
+![lab3 bp](lab3_wininit.JPG)
+<br>
+
+But at some point the malicious instructions have to make a call back to the api instructions. Examining the malicious instructions by viewing the disassembly once the breakpoint is hit and stepping through, we'll come to an instruction that calls back to the api.
+
+![lab3_NtQueryDirectoryFile_call](lab3_NtQueryDirectoryFile_call.JPG)
+<br>
+
+To set the pointer back to the original api location, instead of the malicious location so that the malicious instructions are not called, we can write in the memory the original memory location of the api. If we do this for all the hooked apis then the malicious instructions are never referenced or called.
+
+![lab3 dps](lab3_dps.JPG)
+<br><br>
 
 
 ### References
