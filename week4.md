@@ -2,7 +2,7 @@
 ## DEFENSE AGAINST THE DARK ARTS
 ### CS373 - SUMMER 2019
 <br>
-[Week 2](index.md)  [Week 3](week3.md)
+[Week 2](index.md)  [Week 3](week3.md)   [Week5](week5.md)
 
 <br><br>
 ## Week 4 Write-Up:  Software Vulnerabilities and Exploits
