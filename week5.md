@@ -55,6 +55,12 @@ FakeNet did capture network traffic attempts: a POST to /RPC2, a GET request to 
 ![lab1 9](lab1_fakenet.JPG)
 <br>
 
+### Process Injection
+
+Process injection is often used in malware. Using the tool Process Hacker, we can look for suspecious files that are executable and have no name ("Private"). We can also use this tool to review the memory in strings of the files.
+
+![lab2](lab2_processInjection.JPG)
+<br>
 
 
 ### References
