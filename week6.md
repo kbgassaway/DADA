@@ -44,7 +44,16 @@ Jonathan Postel wrote an RFC in 1989 on the Robustness Principle. See [RFC 2468]
 •	The Golden Rule should apply when transmitting data. If you expect others to use up-to-date and valid protocols, do so yourself.
 <br>
 
-### 
+### Firewall Policies
+
+Firewalls filter traffic between zones and look for suspecious activity using a set of rules that define actions based on zones and protocols. Whitelisting allows for traffic that is expected or permitted, and is finite, and is used in setting firewall policy. 
+
+<br>
+![policiesZones](policiesZonesJPG)
+<br>
+
+![policies](policiesJPG)
+<br>
 
 ### References
 Venugopalan R., Cooper G., Intel Security, *Network Security*, OSU CS-373 DEFENSE AGAINST THE DARK ARTS
