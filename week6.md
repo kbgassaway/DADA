@@ -46,13 +46,38 @@ Jonathan Postel wrote an RFC in 1989 on the Robustness Principle. See [RFC 2468]
 
 ### Firewall Policies
 
-Firewalls filter traffic between zones and look for suspecious activity using a set of rules that define actions based on zones and protocols. Whitelisting allows for traffic that is expected or permitted, and is finite, and is used in setting firewall policy. 
+Firewalls filter traffic between zones and look for suspecious activity using a set of rules that define actions based on zones and protocols. Whitelisting allows for traffic that is expected or permitted, and is finite, and is used in setting firewall policy. Some blacklisting can be used as well, however there are an infinite number of possible errors so it should be relied less upon in setting up firewall policies.
 <br>
 
 ![policiesZones](policiesZones.JPG)
 <br>
 
 ![policies](policies.JPG)
+<br>
+
+### Wireshark
+
+Wireshark is a useful tool that gives us the ability to analyze network traffic. In this example we are given some network traffic between two suspected spied. We are to use TrueCrypt, Wireshark, and a decoding script to determine when and where they are to meet.
+<br>
+
+![lab1q1](lab1q1.JPG)
+<br>
+
+Malevolent users sharing messages over the network will often use url encoding to make it more difficult to intercept the message. If we decode parts of their captured packet data and decode the url encoded strings, we see that the two suspects intend to meed Wednesday at 2pm. (Note the messages are not in order).
+<br>
+
+![lab1q1a](lab1q1a.JPG)
+<br>
+
+We weren't able to find where the suspects plan to meet given the previous packet data. Using Wireshark we can search for packets that contain the word "meet". But those sneaky devils are using a password for where they intend to meet up.
+<br>
+
+![lab1q2a](lab1q2a.JPG)
+<br>
+
+Your coworker has hacked one of Betty's (Betty and Greg are the suspects) emails and now suspects his system is infected. He was capturing packets while this ocurred. Again, using Wireshark we can look at the TCP conversations and see the email traffic using pop3 protocal, and http which is likely the protocol used to infect your coworkers computer. The malicious payload apears to be 4,060 Bytes.
+
+![lab1q3email](lab1q3email.JPG)
 <br>
 
 ### References
