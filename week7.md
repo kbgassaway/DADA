@@ -6,11 +6,24 @@
 <br><br>
 ## Week 7 Write-Up:  Web Security
 
-### 
+### WebGoat
 
+There is some setup to be able to use WebGoat. In the vm, extract the OSU tamper data and WebGoat files, open FireFox , and install the tamper data to FireFox and restart the browser. 
 
-![Robust 1](Robust_1.JPG)
+![lab1_install](lab1_install.JPG)
 <br>
+
+Delete the if block that looks for the Java path in webgoat.sh. Get WebGoat running on the terminal with "sudo sh ./webgoat.sh start8080". 
+
+![lab1_webgoatstart](lab1_webgoatstart.JPG)
+<br>
+
+Navigate to the link provided in the terminal to get to WebGoat.
+
+![lab1_webgoat](lab1_webgoat.JPG)
+<br>
+
+
 
 
 ### References
