@@ -8,7 +8,7 @@
 ## Homework 3:  Header Analysis
 
 A lot can be gleaned from analyzing network traffic packet headers. Including what type of network, if it's under attack, who is communicating with who, what services the network provides, and more. We'll write Python scripts to analyze two different collections of network packets to determine the main functions and kind of each network (e.g. work, home, data center, ISP).
-<br>
+<br><br>
 
 ### Find Statistics on TCP and UDP Services
 
@@ -65,7 +65,7 @@ The network prefix appears to be 10.5.63.xx, which falls in the range of private
 
 
 ![q2_Routput](q2_Routput.JPG)
-<br>
+<br><br>
 
 *O.csv*
 My answer for 2 was “a data center that supports email services.” And I stick by that answer. There are 17,004 distinct IP addresses listed for 1M packets. There are several addresses that have very high counts, and then there are lots of addresses that have only have a handful of counts, meaning the requests are dispersed. It’s clearly not a home. 
