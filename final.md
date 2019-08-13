@@ -16,10 +16,7 @@ To get an account with HTB takes more work than simplly entering an email and pa
 
 For my first attempt to create my invite code, I wanted to do something silly and see what happens. My inspiration was from the Little Bobby Tables comic on SQL injection and a character from Stranger Things. “Barb’); DROP TABLE USERS” as I expected, didn’t do anything but return an invalid invite code message.
 
-![littleBobby](littleBobby.JPG)
-<br>
-
-![InviteCode1](InviteCode1.JPG)
+![littleBobby](littleBobby.JPG) ![InviteCode1](InviteCode1.JPG)
 <br>
 
 
@@ -57,7 +54,7 @@ I attempted to use the string as the invite code but that failed. The encrypt ty
 
 Using Postman I made the POST request, which returned a code. 
 
-![InkedpostmanInvitecode_LI](InkedpostmanInvitecode_LI.JPG)
+![Inkedpostmancode](InkedpostmanInvitecode_LI.JPG)
 <br>
 
 
