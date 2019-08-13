@@ -54,7 +54,7 @@ I attempted to use the string as the invite code but that failed. The encrypt ty
 
 Using Postman I made the POST request, which returned a code. 
 
-![Inkedpostman](Inkedpostman.JPG)
+![Inkedpostman](Inkedpostman.jpg)
 <br>
 
 
