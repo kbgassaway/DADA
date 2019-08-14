@@ -19,7 +19,7 @@ To get an account with HTB takes more work than simplly entering an email and pa
 
 For my first attempt to create my invite code, I wanted to do something silly and see what happens. My inspiration was from the Little Bobby Tables comic on SQL injection and a character from Stranger Things. “Barb’); DROP TABLE USERS” as I expected, didn’t do anything but return an invalid invite code message.
 
-![littleBobby](littleBobby.JPG)![InviteCode1](InviteCode1.JPG)
+![littleBobby](littleBobby.JPG) ![InviteCode1](InviteCode1.JPG)
 <br>
 
 
@@ -42,6 +42,7 @@ I entered the path and found the source code and saw a function called “makeIn
 
 ![inviteapi](inviteapi.JPG)
 <br>
+
 
 Back on the original sign-up page in the console, I entered “makeInviteCode()”. The response included a string in the data entity. 
   
@@ -70,6 +71,7 @@ This code did not work on the sign-up page, so I went back to the decode Base64 
 Before you get started, it's important that you read the rules so that you don't get into any legal trouble. It's also highly recommended that you use a virtual machine and vpn using the provided connection pack as HTB cannot gaurentee that the site or the files contain no malicious content. The vm I built runs Ubuntu using VirtualBox.
 <br><br>
 
+
 ### MarketDump      by butrintkomoni    \[30 Points]
 
 "We have got informed that a hacker managed to get into our internal network after pivoiting through the web platform that runs in public internet. He managed to bypass our small product stocks logging platform and then he got our costumer database file. We believe that only one of our costumers was targeted. Can you find out who the customer was?"
@@ -79,20 +81,24 @@ MarketDump is a Forensics challenge. The zip file contains a pcapng file, a netw
 ![mD2](mD2.JPG)
 <br>
 
+
 Easy 30 points, I thought, just decode the string using Base64 and get the flag to submit. Wrong. Decoding using Base64 returns invalid input.
 
 ![mD3](mD3.JPG)
 <br>
+
 
 I heard about the toolkit website for decryption, (dcode.fr)[https://www.dcode.fr/about], from a classmate, and attempted to decode the string using Base26 and Base36. Unforetunately, both of these resulted in garbage. The flag to submit needs to be in the format of HTB{...}.
 
 ![mD4](mD4.JPG)
 <br>
 
+
 I searched for other decoding tools online and found (CyberChef)[https://gchq.github.io/CyberChef/], an open source web tool designed for decoding data. This tool can automatically determine which what method to use to decode your input, perhaps based on the combination of the input itself and the output after decoding. I placed the string in the input, keep Auto Bank checked, hit bake, and the decoded flag appears! 
 
 ![mD5](mD5.JPG)
 <br>
+
 
 CyberChef lets you know what method they used to decode the text. In this case it was Base58, which I was not familiar with. Base58 is an alphanumeric set of characters that leaves out letters and numbers that are more difficult to transcribe, such as 0, O, I, l. Base58 is used in bitcoin transactions (https://learnmeabitcoin.com/glossary/base58).
 
