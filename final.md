@@ -102,12 +102,54 @@ I searched for other decoding tools online and found (CyberChef)[https://gchq.gi
 
 CyberChef lets you know what method they used to decode the text. In this case it was Base58, which I was not familiar with. Base58 is an alphanumeric set of characters that leaves out letters and numbers that are more difficult to transcribe, such as 0, O, I, l. Base58 is used in bitcoin transactions (https://learnmeabitcoin.com/glossary/base58).
 
-Input the flag in the MarketDump challenge and submit.
+Input the flag in the MarketDump challenge and submit. We have successfully found the victim the one victom whose credit card information was compromised.
 
 ![mD6](mD6.JPG)
+<br><br>
+
+
+### misDIRection      by incidrthreat    \[20 Points]
+
+"During an assessment of a unix system the HTB team found a suspicious directory. They looked at everything within but couldn't find any files with malicious intent."
+
+misDIRection is a Miscellaneous challenge. Before extracting the zip file, several folders can be seen in the zip but all with 0 bytes size. The folders are each named using one character from the Base64 set, except for the characters "+" and "/".
+
+![2](2.JPG)
 <br>
 
-### References
+Opening up the subfolders, some have files with no file size, and others are empty.
+
+![3](3.JPG)
+<br>
+
+Once the file is unzipped, none of the folders or files are visible in the directory. Perhaps they are all hidden.
+
+![4](4.JPG)
+<br>
+
+Using *ls -a* in the terminal in the directory where the file was unzipped, we can see the ./secret folder. And then we can *ls* to see the subdirectories and files.
+
+![5](5.JPG)
+<br>
+
+Back in the file manager, I still didn't see the .secret folder. I checked the Show Hidden Files option and the folder appears. We can see the subdirectories as well.
+
+![6](6.JPG) ![7](7.JPG)
+<br>
+
+By hand, I wrote all the folders and then each file name or names, which are numbered 1 through 36, that reside in eachfolder. After a few minutes of reviewing, I noticed that none of the file names/numbers repeat. I realized this must be a code using Base64. I transcribed the code using the character from the folder in order of the file numbers starting with 1.
+
+![8](8.JPG)
+<br>
+
+I saved the text in a file, decoded using Base64 in the terminal to come up with the solution flag.
+
+![10](10.JPG)
+<br>
+
+![12](12.JPG)
+<br>
+
 
 
 
