@@ -88,13 +88,13 @@ Easy 30 points, I thought, just decode the string using Base64 and get the flag 
 <br>
 
 
-I heard about the toolkit website for decryption, (dcode.fr)[https://www.dcode.fr/about], from a classmate, and attempted to decode the string using Base26 and Base36. Unforetunately, both of these resulted in garbage. The flag to submit needs to be in the format of HTB{...}.
+I heard about the toolkit website for decryption, [dcode.fr](https://www.dcode.fr/about), from a classmate, and attempted to decode the string using Base26 and Base36. Unforetunately, both of these resulted in garbage. The flag to submit needs to be in the format of HTB{...}.
 
 ![mD4](mD4.JPG)
 <br>
 
 
-I searched for other decoding tools online and found (CyberChef)[https://gchq.github.io/CyberChef/], an open source web tool designed for decoding data. This tool can automatically determine which what method to use to decode your input, perhaps based on the combination of the input itself and the output after decoding. I placed the string in the input, keep Auto Bank checked, hit bake, and the decoded flag appears! 
+I searched for other decoding tools online and found [CyberChef](https://gchq.github.io/CyberChef/), an open source web tool designed for decoding data. This tool can automatically determine which what method to use to decode your input, perhaps based on the combination of the input itself and the output after decoding. I placed the string in the input, keep Auto Bank checked, hit bake, and the decoded flag appears! 
 
 ![mD5](mD5.JPG)
 <br>
