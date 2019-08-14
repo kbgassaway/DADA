@@ -164,7 +164,7 @@ I saved the text in a file, decoded using Base64 in the terminal to come up with
 
 "Your target is not very good with computers. Try and guess their password to see if they may be hiding anything!"
 
-Lernaean is a Web challenge. Using FireFox once you get the instance started, navigate to the provided site (making sure to remove spaces and the word "port"). Although the site explicitely says not to try to guess the admin password, I tried all the same using: ' or '1'='1' --' (hoping to evaluate to TRUE), ?????????????????????????????? (hoping for a buffer overflow), admin, and adminpw (worth a shot). Invalid passward returned with each attempt.
+Lernaean is a Web challenge. Using FireFox I got the instance started, navigated to the provided site (made sure to remove spaces and the word "port"). Although the site explicitely says not to try to guess the admin password, I tried all the same using: ' or '1'='1' --' (SQL injectioin that would hopefully evaluate to TRUE), ?????????????????????????????? (attempting a buffer overflow), admin, and adminpw (worth a shot). "Invalid password" was returned with each attempt.
 
 ![Lernaean1](Lernaean1.JPG)
 <br>
@@ -176,13 +176,13 @@ Next, I tried navigating to the paths "/admin", "/password", and "/login" but st
 <br>
 
 
-I then inspected the input field of the page, and changed the input type from "password" to "user" and name from "password" to "user" hoping to break the validation. However, nothing returned when submitted. 
+I then inspected the input field of the page, and changed the input type from "password" to "user" and name from "password" to "user" hoping to break the validation. However, "Invalid password" returned when submitted. 
 
 ![Lernaean3](Lernaean3.JPG)
 <br>
 
 
-I changed the method from a POST to a GET, to perhaps bypass the validation altogether. Nothing was returned when submitted.
+I changed the method from a POST to a GET, to perhaps bypass the validation altogether. Again, same result when submitted.
 
 ![Lernaean4](Lernaean4.JPG)
 <br>
@@ -194,7 +194,7 @@ I decided to use Burp Suite to intercept the POST, which requires setting up a p
 <br>
 
 
-I decided to try to brute force the password but had to look up how to do so. I read about a tool called Hydra, a password cracking tool. I wanted to learn more about Hydra before using it, and when I looked it up one of the search results was for the Greek mythological monster Lernaean Hydra. Since the name of the challenge is Lernaean, I figured I was on the right track.
+I decided to try to brute force the password but had to look up how to do so. I read about a tool called Hydra, a password cracking tool. I wanted to learn more about Hydra before using it and when I looked it up, one of the search results was for the Greek mythological monster Lernaean Hydra. Since the name of the challenge is Lernaean, I figured I was on the right track.
 
 ![Lernaean17](Lernaean17.JPG)
 <br>
@@ -205,12 +205,38 @@ I installed Hydra and a common password list provided by Kaggle (rockyou.txt). T
 ![Lernaean7](Lernaean7.JPG)
 <br>
 
-See in green the password is "leonardo"!
+
+See in green the password is "leonardo"! I entered it into the login and the page returned the following.
+
+![Lernaean10](Lernaean10.JPG)
+<br>
 
 
+I decided to intercept the login POST again using Burp Suit but this time with the found password.
+
+![Lernaean8](Lernaean8.JPG)
+<br>
 
 
+I decided to intercept the login POST again using Burp Suit but this time with the found password.
+
+![Lernaean8](Lernaean8.JPG)
+<br>
 
 
+In the HTTP history, we see the POST requests made and also the GET request that returned the Oops! Too slow! with the path /noooooooooope.html. I sent the last POST request to the repeater so that I could analyze the response. 
+
+![Lernaean11](Lernaean11.JPG)
+<br>
+
+
+After sending the request and looking through the response, you can see the flag "HTB{l1k3_4_b0s5_s0n}" in the first heading tag. I just completed my first brute force attacke!
+
+![Lernaean12](Lernaean12.JPG)
+<br>
+
+
+![Lernaean13](Lernaean13.JPG)
+<br>
 
 
