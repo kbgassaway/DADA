@@ -11,6 +11,6 @@
 
 
 ### References
-, Intel Security/McAfee Labs, *Web Security*, OSU CS-373 DEFENSE AGAINST THE DARK ARTS
+Peterson, Eric, Intel Security/McAfee Labs, *Messaging Security*, OSU CS-373 DEFENSE AGAINST THE DARK ARTS
 
 
