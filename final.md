@@ -209,5 +209,5 @@ After sending the request and looking through the response, you can see the flag
 ![Lernaean12](Lernaean12.JPG)
 <br><br>
 
-![Lernaean13](Lernaean13.JPG)
+![Lernaean16](Lernaean16.JPG)
 <br><br>
