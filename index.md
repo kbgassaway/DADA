@@ -2,6 +2,7 @@
 ### CS373 - SUMMER 2019
 <br>
 [Week 3](week3.md)   [Week 4](week4.md)   [Week5](week5.md)  [Week 6](week6.md)  [Week 7](week7.md)   [Homework 3](homework3.md)
+[Week 7](week7.md)  [Week 8](week8.md)  [Final](final.md)
 
 <br><br>
 ## Week 2 Write-Up:  Advanced Forensics
