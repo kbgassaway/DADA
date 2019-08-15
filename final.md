@@ -50,7 +50,7 @@ Back on the original sign-up page in the console, I entered “makeInviteCode()�
 <br>
 
 
-I attempted to use the string as the invite code but that failed. The encrypt type of the string is Base64, so I went to a site to https://www.base64decode.org/ to decrypt, and the following instructions were decoded: “In order to generate the invite code, make a POST request to /api/invite/generate.
+I attempted to use the string as the invite code but that failed. The encrypt type of the string is Base64, so I went to a site to https://www.base64decode.org/ to decode, and the following instructions were decoded: “In order to generate the invite code, make a POST request to /api/invite/generate.
 
 ![decodebase64](decodebase64.JPG)
 <br>
@@ -62,13 +62,13 @@ Using Postman I made the POST request, which returned a code.
 <br>
 
 
-This code did not work on the sign-up page, so I went back to the decode Base64 page. Once I decoded the code, I went back to the sign-up page and successfully signed up to HTB! Once you have successfully created your invite code, you may create a user account. Don't worry, you won't have to create your own invite code each time you want to login.
+This code did not work on the sign-up page, so I went back to the decode Base64 page. Once decoded, I went back to the sign-up page and successfully signed up to HTB! Once you have successfully created your invite code, you may create a user account. Don't worry, you won't have to create your own invite code each time you want to login.
 
 ![loginCongrats](loginCongrats.JPG)
 <br>
 
 
-Before you get started, it's important that you read the rules so that you don't get into any legal trouble. It's also highly recommended that you use a virtual machine and vpn using the provided connection pack as HTB cannot gaurentee that the site or the files contain no malicious content. The vm I built runs Ubuntu using VirtualBox.
+#### Before you get started, it's important that you read the rules so that you don't get into any legal trouble. It's also highly recommended that you use a virtual machine and vpn using the provided connection pack as HTB cannot gaurentee that the site or the files contain no malicious content. The vm I built runs Ubuntu using VirtualBox.
 <br><br><br>
 
 
@@ -91,14 +91,14 @@ I heard about the toolkit website for decryption, [dcode.fr](https://www.dcode.f
 ![mD4](mD4.JPG)
 <br><br>
 
-I searched for other decoding tools online and found [CyberChef](https://gchq.github.io/CyberChef/), an open source web tool designed for decoding data. This tool can automatically determine which what method to use to decode your input, perhaps based on the combination of the input itself and the output after decoding. I placed the string in the input, keep Auto Bank checked, hit bake, and the decoded flag appears! 
+I searched for other decoding tools online and found [CyberChef](https://gchq.github.io/CyberChef/), an open source web tool designed for decoding data. This tool can automatically determine which method to use to decode your input, perhaps based on the combination of the input itself and the output after decoding. I placed the string in the input, kept Auto Bank checked, hit bake, and the decoded flag appears! 
 
 ![mD5](mD5.JPG)
 <br><br>
 
 CyberChef lets you know what method they used to decode the text. In this case it was Base58, which I was not familiar with. Base58 is an alphanumeric set of characters that leaves out letters and numbers that are more difficult to transcribe, such as 0, O, I, l. Base58 is used in bitcoin transactions (https://learnmeabitcoin.com/glossary/base58).
 
-Input the flag in the MarketDump challenge and submit. We have successfully found the victim the one victom whose credit card information was compromised.
+Input the flag in the MarketDump challenge and submit. We have successfully found the one victom whose credit card information was compromised.
 
 ![mD6](mD6.JPG)
 <br><br><br>
@@ -118,7 +118,7 @@ Opening up the subfolders, some have files with no file size, and others are emp
 ![3](3.JPG)
 <br><br>
 
-Once the file is unzipped, none of the folders or files are visible in the directory. Perhaps they are all hidden.
+Once the file is unzipped, none of the folders or files are visible in the directory. Perhaps they are all hidden, which is a technique sometimes used for making malicious content difficult to find.
 
 ![4](4.JPG)
 <br><br>
@@ -128,7 +128,7 @@ Using *ls -a* in the terminal in the directory where the file was unzipped, we c
 ![5](5.JPG)
 <br><br>
 
-Back in the file manager, I still didn't see the .secret folder. I checked the Show Hidden Files option and the folder appears. We can see the subdirectories as well.
+Back in the file manager, I didn't see the .secret folder. I checked the Show Hidden Files option and the folder appears. We can see the subdirectories as well.
 
 ![6](6.JPG)
 <br><br>
@@ -136,7 +136,7 @@ Back in the file manager, I still didn't see the .secret folder. I checked the S
 ![7](7.JPG)
 <br><br>
 
-By hand, I wrote all the folders and then each file name or names, which are numbered 1 through 36, that reside in eachfolder. After a few minutes of reviewing, I noticed that none of the file names/numbers repeat. I realized this must be a code using Base64. I transcribed the code using the character from the folder in order of the file numbers starting with 1.
+By hand, I wrote all the folders and then each file name or names, which are numbered 1 through 36, that reside in each folder. After a few minutes of reviewing, I noticed that none of the file names/numbers repeat. I realized this must be a code using Base64. I transcribed the code using the character from the folder in order of the file numbers starting with 1.
 
 ![8](8.JPG)
 <br><br>
@@ -174,7 +174,7 @@ I changed the method from a POST to a GET, to perhaps bypass the validation alto
 ![Lernaean4](Lernaean4.JPG)
 <br><br>
 
-I decided to use Burp Suite to intercept the POST, which requires setting up a proxy server in the browser settings. Once the proxy server was set, I navigated to Proxy and Intercept in Burp Suite and turned Intercept to on. Then, when back to the login page I entered some garbage and submitted. The POST was intercepted and we see the request to the website, including the destination IP address and port number.
+I decided to use Burp Suite to intercept the POST request. Burp Suite is a web application security testing application, that offers a free Community version that is capable of intercepting requests and responses, making repeat requests, editing requests, decoding, and lots more (https://portswigger.net/burp). Intercepting requests requires setting up a proxy server in the browser settings. Once the proxy server was set, I navigated to Proxy and Intercept in Burp Suite and turned Intercept to on. Then, when back to the login page I entered some garbage and submitted. The POST was intercepted and we see the request to the website, including the destination IP address and port number.
 
 ![Lernaean5](Lernaean5.JPG)
 <br><br>
