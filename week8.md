@@ -7,7 +7,7 @@
 <br><br>
 ## Week 8 Write-Up:  Messaging Security
 
-You may never have had to deal with malware infecting your computer but if you own an email account, you have seen spam and have been a target of phishing attempts. 
+You may never have had to deal with malware infecting your computer but if you own an email account (and tip of the hat if you do not), you have seen spam and have been a target of phishing attempts. 
 <br><br>
 
 ### Spam
@@ -20,6 +20,8 @@ Spam can be filtered by using a few different methods. The reputation of the IP 
 ### Phishing 
 
 Phishing is used to get the recepient to divulge information such as passwords, credit card numbers, or personally identifiable information (PII), and accounts for 90% of data breaches (https://retruster.com/blog/2019-phishing-and-email-fraud-statistics.html). Often the messages look legitimate and may even appear to be from a trusted sender (by way of email spoofing or use of cousin domains). The message may include a link or attachment, and often in an urgent tone asks the receiver to provide information ("a call to action"). 
+
+Hover over any links and look for the link's actual url address. They should match, if they don't or if the url contains suspecious strings or file extensions (such as .zip, .xlsx, .pdf, .exe, .docx, .rar, .php, .htm), don't click. If this is your work email, send the email as an attachment to your IT or CyberSecurity group and include "suspecious email" or the like in the subject line. 
 
 Sometimes the link may be within an attachment but because spam filters cannot reasonably open email attachments and look for links, it is extremely difficult for filtering software to detect these types of attempts. Hovering over links to see what url the link actually points to, double checking where the message came from, and simply taking a minute to observe the attributes of a message could save you or your company loads of time and money.
 <br><br>
