@@ -26,11 +26,14 @@ Sometimes the link may be within an attachment but because spam filters cannot r
 
 ### The Regex Coach
 
-The Regex Coach is a tool that can be used to match target strings that may appear in recognized spam or phishing messages using regular expressions. Similar to how we built yara rules for AV in week 3; however, Regex can match fixed and variable strings. For instance, if we want to match all the following variations: 
+The Regex Coach is a tool that can be used to match target strings that may appear in recognized spam or phishing messages using regular expressions. Similarly to how we built yara rules for AV in week 3, we can filter for strings with Regex; however, Regex can match fixed and variable strings. For instance, if we want to match all the following variations: 
 
 V | a g r a
-\/iaGrA
+<br>
+\\/iaGrA
+<br>
 v|4gra
+<br>
 
 but exclude Viagra (not my example), we could use the following regular expression:
 
